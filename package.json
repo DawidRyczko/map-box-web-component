@@ -1,8 +1,15 @@
 {
   "name": "mapbox-map-web-component",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Web Component with Mapbox to show point on map with custom styles, markers and sizes.",
-  "keywords": ["mapbox", "map", "web component"],
+  "keywords": [
+    "mapbox",
+    "map",
+    "web component",
+    "map marker",
+    "mapbox gl",
+    "map web component"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -55,8 +62,10 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^21.9.0"
   },
-
   "dependencies": {
+    "mapbox-gl": "^3.9.0"
+  },
+  "peerDependencies": {
     "mapbox-gl": "^3.9.0"
   }
 }

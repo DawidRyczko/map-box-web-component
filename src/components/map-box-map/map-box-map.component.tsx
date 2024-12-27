@@ -124,8 +124,13 @@ export class MapBoxMap {
       this.mapStyle);
   }
 
-  private showMarker(map: Map) {
-    console.log('ASSETS', getAssetPath('./assets/marker.svg'));
+  /**
+   * Displays a marker on the provided map at the specified coordinates.
+   *
+   * @param {Map} map - The map instance where the marker will be displayed.
+   * @return {void} No value is returned.
+   */
+  private showMarker(map: mapboxgl.Map) {
     const marker = createMarker(getAssetPath('./assets/marker.svg'), this.markerUrl, this.markerWidth, this.markerHeight);
     new mapboxgl.Marker({ element: marker }).setLngLat([this.lng, this.lat]).addTo(map);
   }

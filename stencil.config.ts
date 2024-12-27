@@ -23,4 +23,6 @@ export const config: Config = {
   testing: {
     browserHeadless: "new",
   },
+  generateExportMaps: false,
+  sourceMap: false,
 };

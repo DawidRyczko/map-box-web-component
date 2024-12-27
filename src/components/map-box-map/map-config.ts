@@ -1,7 +1,7 @@
-import mapboxgl from 'mapbox-gl';
+import { Map } from 'mapbox-gl';
 
 export function createMap(mapContainer: HTMLElement, lng: number, lat: number, zoom: number, mapStyle: string) {
-  return new mapboxgl.Map({
+  return new Map({
     container: mapContainer,
     center: [lng, lat],
     zoom: zoom,
