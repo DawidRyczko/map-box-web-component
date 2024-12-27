@@ -6,56 +6,132 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface MapBoxMap {
         /**
-          * The first name
+          * To use Mapbox GL JS, you need to have a Mapbox access token. https://docs.mapbox.com/mapbox-gl-js/guides/install/#:~:text=have%20a%20Mapbox-,access%20token,-.%20This%20access%20token
+          * @type {string}
          */
-        "first": string;
+        "accessToken": string | undefined;
         /**
-          * The last name
+          * Represents the height of a map. Supported all CSS values. Default value: '100%'
+          * @type {string}
          */
-        "last": string;
+        "height": string;
         /**
-          * The middle name
+          * Represents the latitude coordinate of a geographical location.
+          * @type {number}
          */
-        "middle": string;
+        "lat": number;
+        /**
+          * Represents the longitude coordinate of a geographical location.
+          * @type {number}
+         */
+        "lng": number;
+        /**
+          * Url to your Map Box style https://docs.mapbox.com/help/dive-deeper/map-design/
+          * @type {string}
+         */
+        "mapStyle": string | undefined;
+        /**
+          * Set height in pixels for marker
+          * @type {string}
+         */
+        "markerHeight": string;
+        /**
+          * Represents the URL of the marker icon to be used in a map. If no url there will be used default icon.  Sometimes the default icon can be restricted like in VitVe https://vite.dev/config/server-options.html#server-fs-allow
+          * @type {string}
+         */
+        "markerUrl": string | undefined;
+        /**
+          * Set width in pixels for marker
+          * @type {string}
+         */
+        "markerWidth": string;
+        /**
+          * Represents the width of a map. Supported all CSS values. Default value: '100%'
+          * @type {string}
+         */
+        "width": string;
+        /**
+          * Initial zoom level min 0, max 15
+          * @type {number}
+         */
+        "zoom": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMapBoxMapElement extends Components.MapBoxMap, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLMapBoxMapElement: {
+        prototype: HTMLMapBoxMapElement;
+        new (): HTMLMapBoxMapElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "map-box-map": HTMLMapBoxMapElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface MapBoxMap {
         /**
-          * The first name
+          * To use Mapbox GL JS, you need to have a Mapbox access token. https://docs.mapbox.com/mapbox-gl-js/guides/install/#:~:text=have%20a%20Mapbox-,access%20token,-.%20This%20access%20token
+          * @type {string}
          */
-        "first"?: string;
+        "accessToken"?: string | undefined;
         /**
-          * The last name
+          * Represents the height of a map. Supported all CSS values. Default value: '100%'
+          * @type {string}
          */
-        "last"?: string;
+        "height"?: string;
         /**
-          * The middle name
+          * Represents the latitude coordinate of a geographical location.
+          * @type {number}
          */
-        "middle"?: string;
+        "lat"?: number;
+        /**
+          * Represents the longitude coordinate of a geographical location.
+          * @type {number}
+         */
+        "lng"?: number;
+        /**
+          * Url to your Map Box style https://docs.mapbox.com/help/dive-deeper/map-design/
+          * @type {string}
+         */
+        "mapStyle"?: string | undefined;
+        /**
+          * Set height in pixels for marker
+          * @type {string}
+         */
+        "markerHeight"?: string;
+        /**
+          * Represents the URL of the marker icon to be used in a map. If no url there will be used default icon.  Sometimes the default icon can be restricted like in VitVe https://vite.dev/config/server-options.html#server-fs-allow
+          * @type {string}
+         */
+        "markerUrl"?: string | undefined;
+        /**
+          * Set width in pixels for marker
+          * @type {string}
+         */
+        "markerWidth"?: string;
+        /**
+          * Represents the width of a map. Supported all CSS values. Default value: '100%'
+          * @type {string}
+         */
+        "width"?: string;
+        /**
+          * Initial zoom level min 0, max 15
+          * @type {number}
+         */
+        "zoom"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "map-box-map": MapBoxMap;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "map-box-map": LocalJSX.MapBoxMap & JSXBase.HTMLAttributes<HTMLMapBoxMapElement>;
         }
     }
 }

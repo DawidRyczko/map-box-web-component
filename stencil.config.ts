@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'mapbox-map-element',
+  namespace: 'mapbox-map-web-component',
   outputTargets: [
     {
       type: 'dist',
